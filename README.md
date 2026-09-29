@@ -1,14 +1,18 @@
 # Dr. Maya Reynolds, PsyD — Practice Website
 
-A responsive marketing site for a fictional clinical psychology practice in Santa Monica, CA. Built with Next.js 14, TypeScript, and Tailwind CSS, with a focus on calm visual design, accessibility, and a smooth consultation booking flow.
+A responsive marketing site for a fictional clinical psychology practice in Santa Monica, CA. Built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## Pages
+
+- **`/`** — Dr. Maya Reynolds practice site (theme, copy, and photography)
+- **`/stage-a`** — Structural layout study of the Conejo Valley Counseling homepage
 
 ## Features
 
 - Editorial layout with a coastal California palette (forest slate, terracotta, eucalyptus on warm cream)
 - Custom typography via Google Fonts (*Cormorant Garamond* + *Plus Jakarta Sans*)
-- Structured content for services, credentials, office photos, FAQ, and contact
-- Accessible consultation modal (session format, concerns, preferred times)
-- Mobile navigation, accordion FAQ, and back-to-top control
+- Three core services, about, office, FAQ, and consultation booking
+- Mobile navigation and accessible accordion FAQ
 - SEO metadata and JSON-LD for local practice discovery
 
 ## Tech stack
@@ -17,30 +21,6 @@ A responsive marketing site for a fictional clinical psychology practice in Sant
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Lucide React](https://lucide.dev/) icons
-- Deployed on [Vercel](https://vercel.com/)
-
-## Project structure
-
-```
-src/
-├── app/                    # Routes, layout, global styles
-├── components/
-│   ├── layout/             # Navbar, footer, mobile menu, client shell
-│   ├── sections/           # Homepage sections
-│   └── ui/                 # Buttons, modal, accordion, etc.
-├── data/therapist.ts       # Site copy and practice details
-└── types/                  # Shared TypeScript types
-```
-
-## Design tokens
-
-| Token        | Value     | Role                          |
-| ------------ | --------- | ----------------------------- |
-| Primary      | `#1E2E28` | Headings, primary buttons     |
-| Secondary    | `#A86E4B` | Accents, focus rings          |
-| Accent       | `#638475` | Supporting UI                 |
-| Background   | `#FAF8F5` | Page background               |
-| Body text    | `#191C1A` | High-contrast readable copy   |
 
 ## Local development
 
@@ -49,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). Layout study: [http://localhost:3000/stage-a](http://localhost:3000/stage-a).
 
 ### Production build
 
@@ -59,13 +39,35 @@ npm run build
 npm run start
 ```
 
-## Accessibility
+## Deploy
 
-- Semantic landmarks and keyboard-friendly interactive components
-- `:focus-visible` styles on controls
-- Accordion and modal patterns aligned with common ARIA practices
-- Layout tested across common mobile and desktop breakpoints
+1. Push this repo to GitHub.
+2. Import the repo on [Vercel](https://vercel.com/new).
+3. Framework preset: Next.js. Deploy.
+4. Update `metadataBase` in `src/app/layout.tsx` to match your live URL.
 
-## Note on content
+## Design tokens
 
-Dr. Maya Reynolds and practice details are fictional demo content for portfolio purposes. Crisis resources in the footer point to real national helplines.
+| Token      | Value     | Role                        |
+| ---------- | --------- | --------------------------- |
+| Primary    | `#1E2E28` | Headings, primary buttons   |
+| Secondary  | `#A86E4B` | Accents, focus rings        |
+| Accent     | `#638475` | Supporting UI               |
+| Background | `#FAF8F5` | Page background             |
+| Body text  | `#191C1A` | High-contrast readable copy |
+
+## Note
+
+Therapist details are demo content. Crisis resources in the footer point to real national helplines (988).
+
+## Submission checklist
+
+Fill these in after you deploy and record the walkthrough:
+
+| Deliverable | Link |
+| ----------- | ---- |
+| Live site (redesign) | `https://YOUR-PROJECT.vercel.app/` |
+| Layout clone | `https://YOUR-PROJECT.vercel.app/stage-a` |
+| GitHub (public) | `https://github.com/YOUR-USERNAME/maya-therapy` |
+| 5-minute Loom | *(record after deploy)* |
+# maya-therapy
