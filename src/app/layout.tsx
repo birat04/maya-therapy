@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { THERAPIST_INFO } from "@/data/therapist";
 
 const cormorant = Cormorant_Garamond({
@@ -76,7 +74,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Schema.org structured data for local psychological practice
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "Physician"],
@@ -138,9 +135,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans bg-cream text-charcoal min-h-screen antialiased flex flex-col selection:bg-terracotta selection:text-cream">
-        <Navbar />
-        <div className="flex-grow">{children}</div>
-        <Footer />
+        {children}
       </body>
     </html>
   );
