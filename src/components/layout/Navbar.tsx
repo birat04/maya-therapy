@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { NAV_LINKS, THERAPIST_INFO } from "@/data/therapist";
 import { Button } from "@/components/ui/Button";
@@ -39,14 +40,25 @@ export const Navbar: React.FC = () => {
             {/* Logo / Brand */}
             <Link
               href="#hero"
-              className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta rounded-md"
+              className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta rounded-md"
             >
-              <span className="font-serif text-2xl sm:text-2xl md:text-3xl font-normal text-primary tracking-tight group-hover:text-terracotta transition-colors">
-                {THERAPIST_INFO.name}
-              </span>
-              <span className="text-[11px] sm:text-xs text-charcoal-muted tracking-wider uppercase font-sans">
-                {THERAPIST_INFO.role} • Santa Monica, CA
-              </span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-2xs group-hover:scale-105 transition-transform duration-300 shrink-0">
+                <Image
+                  src="/icon.svg"
+                  alt="Dr. Maya Reynolds practice emblem"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl sm:text-2xl md:text-3xl font-normal text-primary tracking-tight group-hover:text-terracotta transition-colors leading-tight">
+                  {THERAPIST_INFO.name}
+                </span>
+                <span className="text-[11px] sm:text-xs text-charcoal-muted tracking-wider uppercase font-sans">
+                  {THERAPIST_INFO.role} • Santa Monica, CA
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation Links */}

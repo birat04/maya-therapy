@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { THERAPIST_INFO, NAV_LINKS, THREE_SERVICES } from "@/data/therapist";
@@ -11,13 +12,24 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-14 border-b border-primary-light/60">
           {/* Practice Branding & Introduction (Col 1-4) */}
           <div className="lg:col-span-4 space-y-4">
-            <div>
-              <span className="font-serif text-3xl font-normal tracking-tight text-cream block">
-                {THERAPIST_INFO.name}
-              </span>
-              <p className="text-xs uppercase tracking-wider text-eucalyptus-light font-sans mt-1">
-                {THERAPIST_INFO.role}
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-xs border border-terracotta/40 shrink-0">
+                <Image
+                  src="/icon.svg"
+                  alt="Dr. Maya Reynolds practice emblem"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <span className="font-serif text-3xl font-normal tracking-tight text-cream block leading-tight">
+                  {THERAPIST_INFO.name}
+                </span>
+                <p className="text-xs uppercase tracking-wider text-eucalyptus-light font-sans mt-0.5">
+                  {THERAPIST_INFO.role}
+                </p>
+              </div>
             </div>
             <p className="text-sm text-cream/70 leading-relaxed max-w-sm pt-2">
               {THERAPIST_INFO.footer.tagline}
