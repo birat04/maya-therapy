@@ -1,41 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AssignmentBanner } from "@/components/ui/AssignmentBanner";
+import { StageAHeader } from "@/components/layout/StageAHeader";
+import { StageAFaqSection } from "@/components/sections/StageAFaqSection";
 
 export default function StageAClone() {
   return (
     <div className="bg-[#FAF7F2] text-[#2B2B2B] min-h-screen font-sans">
       <AssignmentBanner currentStage="A" />
+      <StageAHeader />
 
-      {/* Stage A Header */}
-      <header className="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E5E0D8] py-4">
-        <Container size="wide">
-          <div className="flex items-center justify-between">
-            <Link href="/stage-a" className="font-serif text-2xl tracking-tight text-[#2B2B2B]">
-              Conejo Valley Family Counseling
-            </Link>
-            <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#555]">
-              <a href="#hero" className="hover:text-black transition-colors">Home</a>
-              <a href="#about" className="hover:text-black transition-colors">About</a>
-              <a href="#who-we-help" className="hover:text-black transition-colors">Who We Help</a>
-              <a href="#specialties" className="hover:text-black transition-colors">Specialties</a>
-              <a href="#faqs" className="hover:text-black transition-colors">FAQs</a>
-              <a href="#contact" className="hover:text-black transition-colors">Contact</a>
-            </nav>
-            <a
-              href="#contact"
-              className="px-5 py-2.5 rounded-full bg-[#2B2B2B] text-white text-xs sm:text-sm font-medium hover:bg-black transition-colors"
-            >
-              Book an Appointment
-            </a>
-          </div>
-        </Container>
-      </header>
-
-      {/* 1. Hero Section (Stage A Clone) */}
+      {/* Hero */}
       <section id="hero" className="py-16 sm:py-24 bg-[#FAF7F2]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -76,7 +53,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 2. Intro Section (Stage A Clone) */}
+      {/* Intro */}
       <section className="py-20 bg-[#F4EFEA] border-y border-[#E5E0D8]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -112,7 +89,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 3. Who We Help (Stage A Clone) */}
+      {/* Who We Help */}
       <section id="who-we-help" className="py-20 bg-[#FAF7F2]">
         <Container size="wide">
           <div className="text-center max-w-2xl mx-auto mb-14">
@@ -148,7 +125,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 4. Full-Width Quote Banner (Stage A Clone) */}
+      {/* Quote */}
       <section className="relative py-24 bg-[#1E2322] text-white text-center">
         <Container size="narrow">
           <blockquote className="font-serif text-2xl sm:text-4xl leading-relaxed text-balance">
@@ -157,7 +134,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 5. Areas of Expertise Pills (Stage A Clone) */}
+      {/* Expertise */}
       <section className="py-16 bg-[#F4EFEA] border-b border-[#E5E0D8]">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -181,7 +158,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 6. How We Work (Stage A Clone) */}
+      {/* How We Work */}
       <section id="about" className="py-20 bg-[#FAF7F2]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -212,7 +189,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 7. Divider Quote (Stage A Clone) */}
+      {/* Divider */}
       <section className="py-16 bg-[#F4EFEA] border-y border-[#E5E0D8]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -235,7 +212,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 8. Specialties (Stage A Clone) */}
+      {/* Specialties */}
       <section id="specialties" className="py-20 bg-[#FAF7F2]">
         <Container size="wide">
           <h3 className="font-serif text-3xl sm:text-4xl text-[#2B2B2B] mb-12">Our specialties include…</h3>
@@ -270,7 +247,9 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 9. Final CTA (Stage A Clone) */}
+      <StageAFaqSection />
+
+      {/* Contact */}
       <section id="contact" className="py-20 bg-[#F4EFEA] border-t border-[#E5E0D8]">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -313,7 +292,7 @@ export default function StageAClone() {
         </Container>
       </section>
 
-      {/* 10. Footer (Stage A Clone) */}
+      {/* Footer */}
       <footer className="py-14 bg-[#2B2B2B] text-white">
         <Container size="wide">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-[#444] text-sm text-[#BBB]">
@@ -326,6 +305,7 @@ export default function StageAClone() {
               <p><a href="#hero" className="hover:text-white">Home</a></p>
               <p><a href="#about" className="hover:text-white">About</a></p>
               <p><a href="#specialties" className="hover:text-white">Specialties</a></p>
+              <p><a href="#faqs" className="hover:text-white">FAQs</a></p>
               <p><a href="#contact" className="hover:text-white">Contact</a></p>
             </div>
             <div className="space-y-2">
@@ -336,7 +316,7 @@ export default function StageAClone() {
             </div>
           </div>
           <div className="pt-6 text-center text-xs text-[#777]">
-            <p>Terms | Privacy Policy | Disclaimer | Website by Walker Strategy Co. (Reference Clone Demonstration)</p>
+            <p>Terms | Privacy Policy | Disclaimer | Website by Walker Strategy Co.</p>
           </div>
         </Container>
       </footer>

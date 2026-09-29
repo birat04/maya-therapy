@@ -8,7 +8,7 @@ export const PhilosophySection: React.FC = () => {
   return (
     <section id="about" className="py-20 sm:py-28 bg-cream">
       <Container size="wide">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Text Narrative (Col 1-7) */}
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-terracotta">
@@ -33,7 +33,7 @@ export const PhilosophySection: React.FC = () => {
 
           {/* Right Image Composition (Col 8-12) */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-md lg:max-w-none pb-16 sm:pb-20 mt-8 lg:mt-0">
               <div className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/5] bg-oatmeal border border-border-soft">
                 <Image
                   src="/images/philosophy.jpg"

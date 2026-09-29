@@ -11,7 +11,7 @@ export const TherapistAboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Portrait Composition with Verified Credentials (Col 1-5) */}
           <div className="lg:col-span-5 relative order-2 lg:order-1">
-            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none pb-14 sm:pb-20">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] bg-sand/20 border border-border-soft">
                 <Image
                   src="/images/dr_maya_reynolds.png"

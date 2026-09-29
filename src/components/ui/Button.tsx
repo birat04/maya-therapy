@@ -12,6 +12,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   showArrow?: boolean;
   external?: boolean;
+  consultationTrigger?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -24,6 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = "button",
   showArrow = false,
   external = false,
+  consultationTrigger = false,
 }) => {
   const baseClasses =
     "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none select-none tracking-wide";

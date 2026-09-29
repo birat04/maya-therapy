@@ -18,7 +18,6 @@ export const ServicesSection: React.FC = () => {
           className="mb-14 sm:mb-20"
         />
 
-        {/* EXACT THREE SERVICES as required by assignment */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8">
           {THREE_SERVICES.map((service, index) => (
             <div

@@ -21,7 +21,7 @@ export const THERAPIST_INFO = {
   },
   hero: {
     eyebrow: "ONLINE & IN-PERSON THERAPY IN SANTA MONICA & ACROSS CALIFORNIA",
-    h1: "Grounded, depth-oriented therapy to help you heal, unburden, and thrive.",
+    h1: "Santa Monica psychologist offering grounded therapy for anxiety, trauma, and burnout.",
     subheading:
       "Compassionate, evidence-based psychotherapy for thoughtful adults, creatives, and professionals navigating anxiety, trauma, and burnout.",
     ctaPrimary: "Schedule a Consultation",
@@ -106,7 +106,7 @@ export const THERAPIST_INFO = {
     tagline: "We want to make getting started simple. You are welcome to come into our Santa Monica office or connect virtually from anywhere in California.",
     copyright: `© ${new Date().getFullYear()} Dr. Maya Reynolds, PsyD. All rights reserved.`,
     disclaimer:
-      "Dr. Maya Reynolds, PsyD is a Licensed Clinical Psychologist practicing in Santa Monica, California (Fictional Therapist for demonstration purposes). Information on this website is for educational and informational purposes only and does not constitute medical advice or a doctor-patient relationship. In an emergency or crisis, please call 988 or go to your nearest emergency room.",
+      "Dr. Maya Reynolds, PsyD is a Licensed Clinical Psychologist practicing in Santa Monica, California. Information on this website is for educational and informational purposes only and does not constitute medical advice or a doctor-patient relationship. In an emergency or crisis, please call 988 or go to your nearest emergency room.",
   },
 };
 
@@ -150,7 +150,6 @@ export const WHO_WE_HELP: WhoWeHelpItem[] = [
   },
 ];
 
-// EXACT THREE SERVICES as required by assignment specification 13
 export const THREE_SERVICES: Service[] = [
   {
     id: "anxiety-panic",
