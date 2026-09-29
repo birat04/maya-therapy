@@ -5,13 +5,20 @@
 
 ---
 
-## 🌟 Executive Summary & Assignment Deliverables
+## 🌟 Executive Summary & Dual-Stage Deliverables
 
-This project fulfills all 4 parts of the Grow My Therapy Frontend Internship Assignment:
-1. **Stage A: Structural Cloning** — Meticulously analyzed the reference website ([conejovalleycounseling.com](https://www.conejovalleycounseling.com/home)) and recreated its 11-section rhythm, visual hierarchy, asymmetrical multi-image compositions, editorial body grids, and dual-tier footer.
-2. **Stage B: Redesign for Dr. Maya Reynolds, PsyD** — Reimagined the visual personality with a custom calming healthcare palette (**Deep Forest Slate**, **Warm Terracotta**, **Coastal Eucalyptus**, on **Soft Warm Cream** surfaces), editorial serif typography (*Cormorant Garamond*), and humanist sans-serif body text (*Plus Jakarta Sans*).
-3. **New Custom Section ("Our Office")** — Engineered a dedicated, bespoke section (**"A Calm Space for Healing"**) featuring the official interior and consultation room photography downloaded directly from Dr. Maya Reynolds' Google Drive folder.
-4. **Walkthrough & Presentation Ready** — Includes a comprehensive 5-minute client-style Loom walkthrough script, responsive verification matrix across desktop/tablet/mobile, and on-page SEO with JSON-LD structured schema.
+This project fulfills all requirements of the Grow My Therapy Frontend Internship Assignment, providing **both stages** live in a single application:
+1. **Stage B: Dr. Maya Reynolds Redesign (Default Route `/`)**:
+   - Reimagined visual personality with an intentional, calming healthcare palette (**Deep Forest Slate**, **Warm Terracotta**, **Coastal Eucalyptus**, on **Soft Warm Cream** surfaces).
+   - Custom editorial typography (*Cormorant Garamond* paired with *Plus Jakarta Sans*).
+   - Single source of truth: all copy, credentials (`PsyD`), location (`123th Street 45 W, Santa Monica, CA 90401`), formats (in-person Santa Monica + California-wide telehealth), and modalities (CBT, EMDR, Mindfulness, Somatic) are strictly grounded in Dr. Maya's profile.
+   - **NEW Custom Section ("A Calm Space for Healing")**: Features official interior and consultation room photos (`office1.jpeg` and `office2.jpeg`) downloaded from Dr. Maya's Google Drive.
+   - **Interactive Consultation Modal**: An accessible booking dialog allowing clients to select session formats (In-Person vs Telehealth), clinical concerns, and preferred times.
+2. **Stage A: Structural Reference Clone (Route `/stage-a`)**:
+   - A dedicated route faithfully reproducing the exact layout, section order, headings, paragraphs, and color palette of the reference website ([conejovalleycounseling.com](https://www.conejovalleycounseling.com/home)).
+   - Allows evaluators to inspect and verify cloning accuracy side by side.
+3. **Assignment Mode Banner**:
+   - A top navigation bar enabling instant 1-click toggling between Stage A (Clone) and Stage B (Dr. Maya Redesign).
 
 ---
 
@@ -64,7 +71,7 @@ The visual design is intentionally distinguished from the reference website, rep
 │   └── Section Padding: py-20 to py-28 (desktop), py-12 to py-16 (mobile)
 └── Interactive Elements
     ├── Primary CTA: Pill-shaped solid Deep Forest button with subtle hover elevation
-    ├── Secondary CTA: Warm Terracotta or crisp border stroke
+    ├── Consultation Modal: Accessible dialog for session format & time preference
     └── Accordion: WAI-ARIA compliant disclosure with keyboard navigation (Enter/Space)
 ```
 
@@ -77,9 +84,12 @@ src/
 ├── app/
 │   ├── globals.css                # Base Tailwind layer, smooth scrolling, reduced motion
 │   ├── layout.tsx                 # Root layout, Google fonts, OpenGraph, JSON-LD Schema
-│   └── page.tsx                   # Clean assembly of all 12 homepage sections
+│   ├── page.tsx                   # Stage B (Dr. Maya Reynolds homepage)
+│   └── stage-a/
+│       └── page.tsx               # Stage A (Reference site structural clone)
 ├── components/
 │   ├── layout/
+│   │   ├── ClientWrapper.tsx      # Global modal state, assignment banner, back-to-top
 │   │   ├── Navbar.tsx             # Sticky responsive navigation with scroll elevation
 │   │   ├── MobileMenu.tsx         # Slide-in drawer with focus trap & ESC listener
 │   │   └── Footer.tsx             # 2-tier footer with practice details & crisis disclaimer
@@ -98,7 +108,9 @@ src/
 │   │   └── FinalCtaSection.tsx    # Consultation booking with Santa Monica office details
 │   └── ui/
 │       ├── Accordion.tsx          # Accessible disclosure component with chevron rotation
+│       ├── AssignmentBanner.tsx   # Top banner allowing instant Stage A vs Stage B switching
 │       ├── Button.tsx             # Polymorphic button/link with primary/secondary/outline variants
+│       ├── ConsultationModal.tsx  # Interactive consultation booking dialog
 │       ├── Container.tsx          # Reusable responsive max-width wrapper
 │       └── SectionHeading.tsx     # Standardized eyebrow, H2, and lead paragraph
 ├── data/
@@ -150,9 +162,10 @@ Use this structured script when recording your Loom video walkthrough:
 - *"Hi everyone, today I'm excited to present the custom digital home and brand identity for Dr. Maya Reynolds, PsyD, a licensed clinical psychologist based in Santa Monica, California."*
 - *"When high-achieving adults, creatives, and professionals look for a therapist, they aren't looking for a corporate medical clinic or a generic wellness template. They are looking for safety, clinical competence, warmth, and grounded presence. Our design system reflects exactly that."*
 
-### Minute 0:45 – 1:45 | Hero Section & Stage A Clone Fidelity
-- *"Starting in the Hero section, you'll notice our layout directly honors the architectural rhythm of the Conejo Valley Counseling reference website—using an asymmetrical dual-photo composition, a calm eyebrow tag, and an authentic editorial serif H1."*
-- *"We showcase Dr. Maya's verified portrait alongside an authentic badge confirming her clinical credentials. Notice the color palette: instead of sterile clinical blues or harsh black-and-white, we chose Deep Forest Slate, Warm Terracotta, and Soft Warm Cream, giving the client an immediate feeling of relaxation."*
+### Minute 0:45 – 1:45 | Hero Section & Dual-Stage Navigation
+- *"Notice our Assignment Mode banner at the very top: evaluators can toggle with one click between Stage B (our full redesign) and Stage A (the exact structural clone of Conejo Valley Counseling). Let's review Stage B first."*
+- *"In the Hero section, you'll see our layout directly honors the architectural rhythm of the reference website—using an asymmetrical dual-photo composition, a calm eyebrow tag, and an authentic editorial serif H1."*
+- *"We showcase Dr. Maya's verified portrait alongside an authentic badge confirming her clinical credentials. Notice the color palette: instead of sterile clinical blues or harsh black-and-white, we chose Deep Forest Slate, Warm Terracotta, and Soft Warm Cream."*
 
 ### Minute 1:45 – 2:45 | Target Populations & The Exact Three Services
 - *"Scrolling into 'Who We Help' and 'Our Philosophy', the copy speaks directly to clients who appear functional on the outside while quietly carrying anxiety, physical tension, and burnout."*
@@ -162,12 +175,13 @@ Use this structured script when recording your Loom video walkthrough:
 - *"Now let's highlight our completely new custom section: 'A Calm Space for Healing in Santa Monica'. This section did not exist on the reference template."*
 - *"Here, we feature the authentic high-resolution photography from Dr. Maya's Santa Monica practice: her sunlit consultation room and quiet seating area. The copy explains what clients can expect physically: abundant natural light, quiet sound insulation, and an uncluttered space designed to down-regulate the nervous system as soon as they step inside."*
 
-### Minute 3:45 – 4:30 | FAQ Accordion, Accessibility & Responsive Behavior
-- *"Next, we have our interactive FAQ accordion. Every single answer is strictly derived from Dr. Maya's profile doc—clarifying her Santa Monica address (123th Street 45 W), her California-wide telehealth coverage, and her collaborative philosophy."*
-- *"The component is built with full WAI-ARIA accessibility, keyboard navigation, and smooth disclosure animation."*
+### Minute 3:45 – 4:30 | Interactive Consultation Modal, FAQ Accordion & Mobile
+- *"When a visitor clicks 'Schedule a Consultation', an accessible consultation modal opens, allowing them to choose between In-Person in Santa Monica or Telehealth across California, specify their primary concern, and request a consultation."*
+- *"Our FAQ accordion answers key questions supported strictly by Dr. Maya's profile—clarifying her Santa Monica address (123th Street 45 W), California-wide telehealth coverage, and collaborative philosophy with WAI-ARIA compliant keyboard navigation."*
 - *[Switch browser to mobile viewport 390px]*: *"Notice how cleanly the layout adapts: the navigation collapses into an accessible slide-out drawer, buttons span full width with generous touch targets, and typography scales down proportionally without horizontal scroll."*
 
-### Minute 4:30 – 5:00 | Conclusion & Technical Rigor
+### Minute 4:30 – 5:00 | Stage A Clone Verification & Conclusion
+- *"Finally, clicking 'View Stage A Clone' takes us to `/stage-a`, where you can see the faithful reproduction of the original Conejo Valley Counseling structure, validating our cloning accuracy before the redesign."*
 - *"Under the hood, the project is powered by Next.js 14 App Router, strict TypeScript, and Tailwind CSS. The production build passes with zero errors, self-hosts Google Fonts with zero layout shift, and includes Schema.org JSON-LD for local healthcare SEO."*
 - *"Thank you for your time, and I look forward to your feedback!"*
 
