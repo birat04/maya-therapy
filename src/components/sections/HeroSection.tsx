@@ -12,7 +12,7 @@ export const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left / Primary Portrait Image (cols 1-5 on desktop) */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative">
-            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none pb-10 sm:pb-14">
+            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none pb-10 sm:pb-14 isolate">
               {/* Outer decorative subtle framing */}
               <div className="absolute -inset-3 rounded-[2.5rem] bg-sand/40 -rotate-1 -z-10" />
               <div className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-[4/5] bg-oatmeal border border-border-soft">

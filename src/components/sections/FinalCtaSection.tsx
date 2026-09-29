@@ -9,7 +9,7 @@ export const FinalCtaSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 sm:py-28 bg-cream relative overflow-hidden">
       <Container size="wide">
-        <div className="relative rounded-[2.5rem] bg-oatmeal/90 border border-border-soft p-8 sm:p-14 lg:p-20 overflow-hidden shadow-sm">
+        <div className="relative rounded-[2.5rem] bg-oatmeal/90 border border-border-soft p-8 sm:p-14 lg:p-20 overflow-hidden shadow-sm isolate">
           {/* Subtle decorative circles */}
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sand/30 -z-10 blur-2xl" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-eucalyptus-light/40 -z-10 blur-2xl" />
